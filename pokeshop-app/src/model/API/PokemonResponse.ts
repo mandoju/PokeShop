@@ -6,6 +6,7 @@ export interface PokemonResponse {
   height: number;
   id: number;
   moves: PokemonMove[];
+  name: string;
   order: number;
   sprites: PokemonSprites
   stats: PokemonStat[];
