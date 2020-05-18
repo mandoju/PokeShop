@@ -1,0 +1,27 @@
+.container {
+  flex-grow: 1;
+  flex-direction: column;
+  width: 33%;
+  height: 230px;
+}
+
+.card {
+  padding: 10px;
+  height: 100%;
+}
+
+.pokemonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  justify-content: center;
+  background-color: red($color: #000000);
+}
