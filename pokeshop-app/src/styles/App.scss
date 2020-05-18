@@ -1,0 +1,44 @@
+.navbar-container {
+    display: flex;
+    flex: 1 0;
+    width: 100%;
+    min-height: 50px;
+}
+
+.navbar-input {
+    display: flex;
+    flex: 3 0;
+    width: 100%;
+}
+
+.navbar-logo-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-right-element-container {
+    display: flex;
+    flex: 1 0;
+}
+
+.page-list-cart-container {
+    display: flex;
+    flex: 1 0;
+    flex-direction: row;
+}
+
+.pokemon-list-container {
+    display: flex;
+    flex: 4 0;
+    flex-direction: column;
+}
+
+.pokemon-cart-container {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPokemonList, loadPokemonShow } from '../store/ducks/pokemonShop';
-import { NavBar } from '../components/common/NavBar';
+import { NavBar } from '../components/Navbar/NavBar';
 import { useSelectPokemonList } from '../hooks/useSelectPokemonList';
 import { PokemonList } from '../components/PokemonList/PokemonList';
 import { CartList } from '../components/Cart/CartList';
@@ -28,8 +28,10 @@ export const PokemonPage = () => {
   return (
     <div className="page-container">
       <NavBar />
-      <div>
-        <PokemonList />
+      <div className="page-list-cart-container">
+        <div className="pokemon-list-container">
+          <PokemonList />
+        </div>
         <CartList />
       </div>
     </div>
