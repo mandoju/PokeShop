@@ -4,6 +4,7 @@ import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { PokemonPage } from './page/PokemonShopPage';
 
+
 const store = configureStore();
 
 const App = () => {
