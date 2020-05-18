@@ -2,6 +2,7 @@ import { AnyAction } from 'redux';
 import { PokemonManager } from '../../model/PokemonManager';
 import Axios from 'axios';
 import { PokemonResponse } from '../../model/API/PokemonResponse';
+import { generateRandomPrice } from '../../utils/generateRandomPrice';
 
 const POKEMON_SHOP_LIST_DATA = 'pokemon_shop_list_data';
 const POKEMON_SHOP_INFO_DATA = 'pokemon_shop_info_data';
@@ -49,7 +50,7 @@ export const loadPokemonShow = (pokemons: string[]) => {
     });
     const response = await Promise.all(pokemonRequests);
 
-    const payload = response.map((resp) => resp.data);
+    const payload = response.map((resp) => ({...resp.data , price: generateRandomPrice(10,1000)}));
 
     return dispatch({ type: POKEMON_SHOP_SHOW_DATA, payload });
   };
