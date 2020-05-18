@@ -4,6 +4,7 @@ import { loadPokemonList, loadPokemonShow } from '../store/ducks/pokemonShop';
 import { NavBar } from '../components/common/NavBar';
 import { useSelectPokemonList } from '../hooks/useSelectPokemonList';
 import { PokemonList } from '../components/PokemonList/PokemonList';
+import { CartList } from '../components/Cart/CartList';
 
 export const PokemonPage = () => {
   const pokemonList = useSelectPokemonList();
@@ -29,6 +30,7 @@ export const PokemonPage = () => {
       <NavBar />
       <div>
         <PokemonList />
+        <CartList />
       </div>
     </div>
   );

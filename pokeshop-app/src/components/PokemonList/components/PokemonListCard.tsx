@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './PokemonListCard.module.scss';
 import { CARD_BUY_BUTTON_TITLE } from '../../../constants/dictionary';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../store/ducks/cart';
 
 export const PokemonListCard = ({pokemon}: {pokemon: any}) => {
+  const dispatch = useDispatch()
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -13,7 +16,7 @@ export const PokemonListCard = ({pokemon}: {pokemon: any}) => {
         </div>
 
         <div className={styles['button-container']}>
-          <button>{CARD_BUY_BUTTON_TITLE}</button>
+          <button onClick={() => dispatch(addToCart(pokemon))}>{CARD_BUY_BUTTON_TITLE}</button>
         </div>
       </div>
     </div>
