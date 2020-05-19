@@ -10,6 +10,7 @@ import { RootStateType } from '.';
 const POKEMON_SHOP_LIST_DATA = 'pokemon_shop_list_data';
 const POKEMON_SHOP_INFO_DATA = 'pokemon_shop_info_data';
 const POKEMON_SHOP_SHOW_DATA = 'pokemon_shop_show_data';
+const POKEMON_SHOP_LAST_SEARCH_DATA = 'pokemon_shop_last_search_data';
 
 const pokemonManager = new PokemonManager();
 
@@ -18,12 +19,14 @@ interface PokemonShopState {
   pokemonList: { pokemon: Pokemon; slot: number }[]; // Lista total dos pokémons do determinado tipo 
   pokemonShow: PokemonShopInfo[]; // Lista de pokemons que irá ser mostrado na tela
   pokemonInfo: PokemonShopInfo[]; // Cache de informações que armazena os pokémons e seus determinados preços
+  lastSearch: string; // Variável que guarda a ultima busca;
 }
 
 const INITIAL_STATE: PokemonShopState = {
   pokemonList: [],
   pokemonShow: [],
   pokemonInfo: [],
+  lastSearch: '',
 };
 
 export default (state = INITIAL_STATE, action: AnyAction): PokemonShopState => {
@@ -34,6 +37,8 @@ export default (state = INITIAL_STATE, action: AnyAction): PokemonShopState => {
       return { ...state, pokemonInfo: action.payload };
     case POKEMON_SHOP_SHOW_DATA:
       return { ...state, pokemonShow: action.payload };
+    case POKEMON_SHOP_LAST_SEARCH_DATA:
+      return { ...state, lastSearch: action.payload}
     default:
       return state;
   }
@@ -104,7 +109,18 @@ export const searchPokemon = (search: string) => {
     const pokemonFilteredUrls = pokemonFiltered.map(
       (pokemon) => pokemon.pokemon
     );
-
+    dispatch({type: POKEMON_SHOP_LAST_SEARCH_DATA, payload: search});
     await loadPokemonShow(pokemonFilteredUrls)(dispatch, getState);
   };
 };
+
+export const loadMorePokemon = () => {
+  return async (dispatch: any, getState: () => RootStateType) => {
+    const { pokemonShow, pokemonList } = getState().pokemonShop;
+    const size = pokemonShow.length + 20;
+      const pokemonUrl = pokemonList
+        .slice(0, size)
+        .map((pokemon) => pokemon.pokemon);
+    await loadPokemonShow(pokemonUrl)(dispatch, getState);
+  }
+}
