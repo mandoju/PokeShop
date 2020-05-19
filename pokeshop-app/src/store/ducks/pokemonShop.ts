@@ -2,7 +2,10 @@ import { AnyAction } from 'redux';
 import { PokemonManager } from '../../model/PokemonManager';
 import Axios from 'axios';
 import { PokemonResponse } from '../../model/API/PokemonResponse';
+import { PokemonShopInfo } from '../../model/PokemonShopInfo';
+import { Pokemon } from '../../model/Pokemon';
 import { generateRandomPrice } from '../../utils/generateRandomPrice';
+import { RootStateType } from '.';
 
 const POKEMON_SHOP_LIST_DATA = 'pokemon_shop_list_data';
 const POKEMON_SHOP_INFO_DATA = 'pokemon_shop_info_data';
@@ -11,9 +14,9 @@ const POKEMON_SHOP_SHOW_DATA = 'pokemon_shop_show_data';
 const pokemonManager = new PokemonManager();
 
 interface PokemonShopState {
-  pokemonList: any[];
+  pokemonList: {pokemon: Pokemon, slot: number}[];
   pokemonShow: any[];
-  pokemonInfo: any[];
+  pokemonInfo: PokemonShopInfo[];
 }
 
 const INITIAL_STATE: PokemonShopState = {
@@ -55,3 +58,13 @@ export const loadPokemonShow = (pokemons: string[]) => {
     return dispatch({ type: POKEMON_SHOP_SHOW_DATA, payload });
   };
 };
+
+export const searchPokemon = (search: string) => {
+  return async (dispatch: any, getState: () => RootStateType) => {
+    const { pokemonList } = getState().pokemonShop;
+    const pokemonFiltered = pokemonList.filter(pokemon => pokemon.pokemon.name.includes(search))
+    const pokemonFilteredUrls = pokemonFiltered.map(pokemon => pokemon.pokemon.url)
+
+    await loadPokemonShow(pokemonFilteredUrls)(dispatch)
+  }
+}
