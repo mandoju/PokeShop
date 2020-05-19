@@ -29,6 +29,31 @@
     overflow-y: scroll;
 }
 
+.pokemon-cart-total-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    height: 50px;
+    margin-top: 1px;
+}
+
+.pokemon-cart-total-label-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+}
+
+.pokemon-cart-total-price-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+
+}
+
+
+
 .pokemon-cart-button-container {
     display: flex;
     flex: 1 0;
@@ -77,4 +102,16 @@
     flex: 1 0;
     justify-content: center;
     align-items: center;
+}
+
+.cart-buy-modal-container {
+    display: flex;
+    flex: 1 0;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.cart-buy-modal-text {
+    font-weight: normal;
 }

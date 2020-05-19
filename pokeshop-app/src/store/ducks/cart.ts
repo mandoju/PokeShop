@@ -1,13 +1,18 @@
 import { AnyAction } from 'redux';
 import { RootStateType } from '.';
+import { PokemonShopInfo } from '../../model/PokemonShopInfo';
 
 const CART_DATA = 'cart_data';
 
-const INITIAL_STATE = {
+interface CartDuck {
+  cart: PokemonShopInfo[];
+}
+
+const INITIAL_STATE: CartDuck = {
   cart: [],
 };
 
-export default (state = INITIAL_STATE, action: AnyAction) => {
+export default (state = INITIAL_STATE, action: AnyAction): CartDuck => {
   switch (action.type) {
     case CART_DATA:
       return { ...state, cart: action.payload };
