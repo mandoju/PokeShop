@@ -1,3 +1,5 @@
+@import './Variables.scss';
+
 .pokemon-shop-list-inner-container {
   padding-top: 10px;
   display: flex;
@@ -7,7 +9,7 @@
 .pokemon-shop-list-card-container {
   flex-grow: 1;
   flex-direction: column;
-  width: 170px;
+  width: $pokemon-card-width;
   height: 280px;
   padding-bottom: 30px;
 }
@@ -23,6 +25,8 @@
 
 .pokemon-shop-list-card-image {
   border: 1px solid black;
+  max-width: 96px;
+  max-height: 96px;
 }
 
 .pokemon-shop-list-card-name {
@@ -42,7 +46,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 140px;
+  width: $pokemon-card-width;
   height: 80%;
 }
 
@@ -51,7 +55,7 @@
   align-items: center;
   height: 20%;
   justify-content: center;
-  width: 140px;
+  width: $pokemon-card-width;
   border: 1px solid black;
   border-top: 0px;
   &:hover{
