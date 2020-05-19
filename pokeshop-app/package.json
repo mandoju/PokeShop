@@ -22,7 +22,12 @@
   },
   "scripts": {
     "start": "env-cmd -e dark react-scripts start",
-    "build": "react-scripts build",
+    "start:dark": "env-cmd -e dark react-scripts start",
+    "start:dragon": "env-cmd -e dragon react-scripts start",
+    "start:steel": "env-cmd -e steel react-scripts start",
+    "build:dark": "env-cmd -e dark react-scripts build",
+    "build:dragon": "env-cmd -e dragon react-scripts build",
+    "build:steel": "env-cmd -e steel react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
