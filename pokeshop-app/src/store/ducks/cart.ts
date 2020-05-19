@@ -4,15 +4,15 @@ import { PokemonShopInfo } from '../../model/PokemonShopInfo';
 
 const CART_DATA = 'cart_data';
 
-interface CartDuck {
+export interface CartDuck {
   cart: PokemonShopInfo[];
 }
 
-const INITIAL_STATE: CartDuck = {
+const CART_INITIAL_STATE: CartDuck = {
   cart: [],
 };
 
-export default (state = INITIAL_STATE, action: AnyAction): CartDuck => {
+export default (state = CART_INITIAL_STATE, action: AnyAction): CartDuck => {
   switch (action.type) {
     case CART_DATA:
       return { ...state, cart: action.payload };

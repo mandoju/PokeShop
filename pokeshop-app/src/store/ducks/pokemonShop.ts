@@ -14,21 +14,24 @@ const POKEMON_SHOP_LAST_SEARCH_DATA = 'pokemon_shop_last_search_data';
 
 const pokemonManager = new PokemonManager();
 
-interface PokemonShopState {
+export interface PokemonShopDuck {
   pokemonList: { pokemon: Pokemon; slot: number }[]; // Lista total dos pokémons do determinado tipo
   pokemonShow: PokemonShopInfo[]; // Lista de pokemons que irá ser mostrado na tela
   pokemonInfo: PokemonShopInfo[]; // Cache de informações que armazena os pokémons e seus determinados preços
   lastSearch: string; // Variável que guarda a ultima busca;
 }
 
-const INITIAL_STATE: PokemonShopState = {
+export const POKEMON_SHOP_INITIAL_STATE: PokemonShopDuck = {
   pokemonList: [],
   pokemonShow: [],
   pokemonInfo: [],
   lastSearch: '',
 };
 
-export default (state = INITIAL_STATE, action: AnyAction): PokemonShopState => {
+export default (
+  state = POKEMON_SHOP_INITIAL_STATE,
+  action: AnyAction
+): PokemonShopDuck => {
   switch (action.type) {
     case POKEMON_SHOP_LIST_DATA:
       return { ...state, pokemonList: action.payload };
