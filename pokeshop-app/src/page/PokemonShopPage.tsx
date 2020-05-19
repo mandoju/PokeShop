@@ -20,7 +20,7 @@ export const PokemonPage = () => {
       const size = 20;
       const pokemonUrl = pokemonList
         .slice(0, size)
-        .map((pokemon) => pokemon.pokemon.url);
+        .map((pokemon) => pokemon.pokemon);
       dispatch(loadPokemonShow(pokemonUrl));
     }
   }, [dispatch, pokemonList]);
