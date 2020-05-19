@@ -1,0 +1,63 @@
+.pokemon-shop-list-inner-container {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-shop-list-card-container {
+  flex-grow: 1;
+  flex-direction: column;
+  width: 160px;
+  height: 280px;
+  padding-bottom: 30px;
+}
+
+.pokemon-shop-list-card {
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+.pokemon-shop-list-card-image {
+  border: 1px solid black;
+}
+
+.pokemon-shop-list-card-name {
+  font-size: large;
+  text-transform: capitalize;
+}
+
+.pokemon-shop-list-card-price {
+  font-weight: bold;
+}
+
+.pokemon-shop-list-card-info {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 80%;
+}
+
+.pokemon-shop-list-card-button-container {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  justify-content: center;
+  width: 130px;
+  border: 1px solid black;
+  border-top: 0px;
+  &:hover{
+      cursor: pointer;
+  }
+}
+
+.pokemon-shop-list-card-button-title {
+    font-size: larger;
+    font-weight: bold;
+}
