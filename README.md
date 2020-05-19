@@ -9,9 +9,9 @@ Estas lojas foram feitas utilizando a biblioteca React e todas possuem a mesma b
 
 Possuímos 3 tipos de lojas de pokémon:
 
- - Escuridão
- - Ferro
- - Dragão
+ - [Escuridão](https://mandoju.github.io/PokeShop/dark)
+ - [Ferro](https://mandoju.github.io/PokeShop/steel/)
+ - [Dragão](https://mandoju.github.io/PokeShop/dragon/)
 
 
 ## Depêndencias para execução
