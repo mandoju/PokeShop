@@ -30,19 +30,16 @@ export const CartList = () => {
           </div>
           <div className="pokemon-cart-total-container">
             <div className="pokemon-cart-total-label-container ">
-              <p>{CART_TOTAL_LABEL}</p>
+              <p className="pokemon-cart-total-label-text">{CART_TOTAL_LABEL}</p>
             </div>
             <div className="pokemon-cart-total-price-container">
-              <p>{getPriceString(totalPrice)}</p>
+              <p className="pokemon-cart-total-price-text">{getPriceString(totalPrice)}</p>
             </div>
           </div>
-          <div className="pokemon-cart-button-container" >
-            <button
-              className="pokemon-cart-button"
-              onClick={() => setModalState(true)}
-            >
+          <div className="pokemon-cart-button-container"  onClick={() => setModalState(true)}>
+            <p className="pokemon-cart-button-text">
               {CART_BUY_BUTTON_TITLE}
-            </button>
+            </p>
           </div>
         </div>
       </div>

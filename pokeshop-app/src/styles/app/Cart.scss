@@ -9,8 +9,8 @@
 }
 
 .pokemon-cart-inner-container {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: $default-border-style;
+    border-right: $default-border-style;
     min-height: $page-height;
 
 }
@@ -21,7 +21,11 @@
     justify-content: center;
     align-items: center;
     max-height: $cart-title-size;
-    border-bottom: 1px solid black;
+    border-bottom: $default-border-style;
+}
+
+.pokemon-cart-title {
+    font-size: x-large;
 }
 
 .pokemon-cart-list-container {
@@ -34,7 +38,7 @@
     flex: 1 0;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
+    border-top: $default-border-style;
     height: 50px;
     margin-top: 1px;
 }
@@ -45,6 +49,10 @@
     justify-content: center;
 }
 
+.pokemon-cart-total-label-container {
+    font-size: larger;
+}
+
 .pokemon-cart-total-price-container {
     display: flex;
     flex: 1 0;
@@ -52,30 +60,37 @@
 
 }
 
-
+.pokemon-cart-total-price-container {
+    font-size: larger;
+}
 
 .pokemon-cart-button-container {
     display: flex;
     flex: 1 0;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
+    border-top: $default-border-style;
     height: 50px;
     margin-top: 1px;
+    cursor: pointer;
 }
 
+.pokemon-cart-button-text {
+    font-size: x-large;
+    font-weight: bold;
+}
 
 .cart-item {
     display: flex;
     flex: 1 0;
     flex-direction: row;
-    border-top: 1px solid black;
+    border-top: $default-border-style;
     padding: 10px;
     &:first-child{
         border-top: 0px;
     }
     &:last-child{
-        border-bottom: 1px solid black;
+        border-bottom: $default-border-style;
     }
 }
 
@@ -100,7 +115,7 @@
 }
 
 .cart-item-image {
-    border: 1px solid black;
+    border: $default-border-style;
 }
 
 .cart-item-name-container {
