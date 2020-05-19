@@ -7,7 +7,6 @@ export const NavBar = () => {
   const [inputValue, setInputValue] = useState('');
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event.target.value);
       setInputValue(event.target.value);
       dispatch(searchPokemon(event.target.value));
     },
@@ -20,10 +19,12 @@ export const NavBar = () => {
         <div className="navbar-logo" />
       </div>
       <div className="navbar-input-container">
+        <i className="fa fa-search fa-lg icon" /> 
         <input
           className="navbar-input"
           value={inputValue}
           onChange={handleChange}
+          placeholder="Pesquisar..."
         />
       </div>
       <div className="navbar-right-element-container"></div>

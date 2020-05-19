@@ -11,13 +11,20 @@
     display: flex;
     flex: 1 0;
     height: 35px;
+    padding-left: 40px;
+    font-size: medium;
 }
 
 .navbar-input-container {
     display: flex;
     flex: 3 0;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+}
+
+.navbar-input-container i {
+    position: absolute; 
+    padding-left: 10px;
 }
 
 .navbar-logo-container {
