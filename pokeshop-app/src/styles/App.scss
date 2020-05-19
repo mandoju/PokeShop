@@ -17,6 +17,10 @@
   overflow-y: scroll;
 }
 
+.page-container {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
 .modal {
   display: none;
   position: fixed;

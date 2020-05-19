@@ -1,5 +1,11 @@
+$dragon-color: #7038F8;
+$dragon-color-light: #A27DFA;
+$dragon-color-dark: #4924A1;
+$text-color: white;
+$remove-color: #700000;
+
 .navbar-container {
-    background-color: purple;
+    background-color: $dragon-color;
 }
 
 .navbar-logo {
@@ -7,10 +13,64 @@
     background-size: contain;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    border: 0px solid black;
-    width: 50px; /*or your image's width*/
-    height: 50px; /*or your image's height*/
+    width: 50px;
+    height: 50px;
     margin: 0;
     padding: 0;
     align-self: center;
+}
+
+.pokemon-shop-list-container {
+    background-color: $dragon-color-dark;
+}
+
+.pokemon-shop-list-card-info {
+    background-color: $dragon-color-light;
+    color: $text-color;
+}
+
+.pokemon-shop-list-card-image {
+    background-color: $dragon-color-dark;
+}
+
+.pokemon-shop-list-card-button-container {
+    background-color: $dragon-color;
+    color: $text-color;
+}
+
+.pokemon-shop-list-load-more-container{
+    background-color: $dragon-color;
+    color: $text-color;
+}
+
+.pokemon-cart-title-container {
+    background-color: $dragon-color-light;
+    color: $text-color;
+}
+
+.pokemon-cart-list-container {
+    background-color: $dragon-color-dark;
+}
+
+.cart-item {
+    background-color: $dragon-color-light;
+    color: $text-color;
+}
+
+.cart-item-image {
+    background-color: $dragon-color-dark;
+}
+
+.pokemon-cart-total-container {
+    background-color: $dragon-color-dark;
+    color: $text-color
+}
+
+.pokemon-cart-button-container {
+    background-color: $dragon-color;
+    color: $text-color;
+}
+
+.cart-item-remove {
+    color: $remove-color
 }
