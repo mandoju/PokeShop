@@ -6,7 +6,7 @@ import styles from './PokemonList.module.scss'
 export  const PokemonList = () => {
     const pokemonShow = useSelectPokemonShow();
 
-    return (<div className={styles.container}>
+    return (<div className={"pokemon-shop-list-container"}>
         <div className={styles.list}>
             {pokemonShow.map((pokemon, idx) => <PokemonListCard key={idx} pokemon={pokemon} />)}
         </div>
