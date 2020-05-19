@@ -4,13 +4,14 @@ import { RootStateType } from '../../store/ducks';
 import { CartItem } from './components/CartItem';
 import { ModalMessage } from '../Modal/ModalMessage';
 import { CardListBuyModal } from './components/CartListBuyModal';
+import { getPriceString } from '../../utils/getPriceString';
 
 export const CartList = () => {
   const cart = useSelector((state: RootStateType) => state.cart.cart);
 
   const [modalState, setModalState] = useState(false);
 
-  const totalPrice = cart.reduce((a, b) => a + b.price, 0)
+  const totalPrice = cart.reduce((a, b) => a + Math.floor(b.price * 100), 0) / 100
 
   return (
     <>
@@ -29,7 +30,7 @@ export const CartList = () => {
               <p>Total:</p>
             </div>
             <div className="pokemon-cart-total-price-container">
-              <p>{totalPrice}</p>
+              <p>{getPriceString(totalPrice)}</p>
             </div>
           </div>
           <div className="pokemon-cart-button-container">

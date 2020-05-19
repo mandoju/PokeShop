@@ -1,5 +1,6 @@
 import React from 'react';
 import { PokemonShopInfo } from '../../../model/PokemonShopInfo';
+import { getPriceString } from '../../../utils/getPriceString';
 
 export const CartItem = ({pokemon} : {pokemon: PokemonShopInfo}) => {
     return (<div className="cart-item">
@@ -11,7 +12,7 @@ export const CartItem = ({pokemon} : {pokemon: PokemonShopInfo}) => {
         </div>
 
         <div className="cart-item-price-container">
-            <p className="cart-item-price">{pokemon.price}</p>
+            <p className="cart-item-price">{getPriceString(pokemon.price, true)}</p>
         </div>
     </div>
     );
