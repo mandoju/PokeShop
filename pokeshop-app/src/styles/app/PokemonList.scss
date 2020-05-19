@@ -67,3 +67,19 @@
     font-size: larger;
     font-weight: bold;
 }
+
+.pokemon-shop-list-load-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100px;
+}
+
+.pokemon-shop-list-load-more-text {
+    font-size: larger;
+    font-weight: bold;
+}

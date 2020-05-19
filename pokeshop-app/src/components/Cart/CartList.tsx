@@ -6,6 +6,7 @@ import { ModalMessage } from '../Modal/ModalMessage';
 import { CardListBuyModal } from './components/CartListBuyModal';
 import { getPriceString } from '../../utils/getPriceString';
 import { resetCart } from '../../store/ducks/cart';
+import { CART_HEADER_TITLE, CART_TOTAL_LABEL, CART_BUY_BUTTON_TITLE } from '../../constants/dictionary';
 
 export const CartList = () => {
   const cart = useSelector((state: RootStateType) => state.cart.cart);
@@ -20,7 +21,7 @@ export const CartList = () => {
       <div className="pokemon-cart-container">
         <div className="pokemon-cart-inner-container">
           <div className="pokemon-cart-title-container">
-            <p className="pokemon-cart-title">Carrinho</p>
+  <p className="pokemon-cart-title">{CART_HEADER_TITLE}</p>
           </div>
           <div className="pokemon-cart-list-container">
             {cart.map((item, idx) => (
@@ -29,18 +30,18 @@ export const CartList = () => {
           </div>
           <div className="pokemon-cart-total-container">
             <div className="pokemon-cart-total-label-container ">
-              <p>Total:</p>
+              <p>{CART_TOTAL_LABEL}</p>
             </div>
             <div className="pokemon-cart-total-price-container">
               <p>{getPriceString(totalPrice)}</p>
             </div>
           </div>
-          <div className="pokemon-cart-button-container">
+          <div className="pokemon-cart-button-container" >
             <button
               className="pokemon-cart-button"
               onClick={() => setModalState(true)}
             >
-              COMPRE
+              {CART_BUY_BUTTON_TITLE}
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadPokemonList, loadPokemonShow } from '../store/ducks/pokemonShop';
 import { NavBar } from '../components/Navbar/NavBar';

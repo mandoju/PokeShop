@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelectPokemonShow } from '../../hooks/useSelectPokemonShow';
 import { PokemonListCard } from './components/PokemonListCard';
+import { PokemonListLoadMore } from './components/PokemonListLoadMore';
 
 export const PokemonList = () => {
   const pokemonShow = useSelectPokemonShow();
@@ -12,6 +13,7 @@ export const PokemonList = () => {
           <PokemonListCard key={idx} pokemon={pokemon} />
         ))}
       </div>
+      <PokemonListLoadMore />
     </div>
   );
 };

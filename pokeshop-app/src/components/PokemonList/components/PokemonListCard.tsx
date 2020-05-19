@@ -1,5 +1,5 @@
 import React from 'react';
-import { CARD_BUY_BUTTON_TITLE } from '../../../constants/dictionary';
+import { CARD_ADD_BUTTON_TITLE } from '../../../constants/dictionary';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../store/ducks/cart';
 import { getPriceString } from '../../../utils/getPriceString';
@@ -20,7 +20,7 @@ export const PokemonListCard = ({ pokemon }: { pokemon: any }) => {
 
         <div className={'pokemon-shop-list-card-button-container'} onClick={() => dispatch(addToCart(pokemon))}>
           <p className={"pokemon-shop-list-card-button-title"}>
-            {CARD_BUY_BUTTON_TITLE}
+            {CARD_ADD_BUTTON_TITLE}
           </p>
         </div>
       </div>
