@@ -1,0 +1,16 @@
+.navbar-container {
+    background-color: purple;
+}
+
+.navbar-logo {
+    background: url('http://3.bp.blogspot.com/-snX4_xH9NaA/TuN6mI1_hRI/AAAAAAAABgw/ydQGvIz-wYY/s1600/pokemon-tcg-dragon-type-symbol%255B1%255D.png') no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 0px solid black;
+    width: 50px; /*or your image's width*/
+    height: 50px; /*or your image's height*/
+    margin: 0;
+    padding: 0;
+    align-self: center;
+}

@@ -1,0 +1,144 @@
+@import './Variables.scss';
+
+.pokemon-cart-container {
+    display: flexbox;
+    flex: 1 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.pokemon-cart-inner-container {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    min-height: $page-height;
+
+}
+
+.pokemon-cart-title-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+    max-height: $cart-title-size;
+    border-bottom: 1px solid black;
+}
+
+.pokemon-cart-list-container {
+    height: $cart-list-size;
+    overflow-y: scroll;
+}
+
+.pokemon-cart-total-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    height: 50px;
+    margin-top: 1px;
+}
+
+.pokemon-cart-total-label-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+}
+
+.pokemon-cart-total-price-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+
+}
+
+
+
+.pokemon-cart-button-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    height: 50px;
+    margin-top: 1px;
+}
+
+
+.cart-item {
+    display: flex;
+    flex: 1 0;
+    flex-direction: row;
+    border-top: 1px solid black;
+    padding: 10px;
+    &:first-child{
+        border-top: 0px;
+    }
+    &:last-child{
+        border-bottom: 1px solid black;
+    }
+}
+
+
+.cart-item-space-container {
+    display: flex;
+    flex: 1;
+}
+
+.cart-item-content-container {
+    display: flex;
+    flex: 2; 
+    flex-direction: column;
+    justify-content: start;
+}
+
+.cart-item-image-container {
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-image {
+    border: 1px solid black;
+}
+
+.cart-item-name-container {
+    display: flex;
+    flex: 2 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-name {
+    margin: 0;
+}
+
+.cart-item-price-container {
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-price {
+    margin: 0
+}
+
+.cart-item-remove {
+    margin: 0;
+    color: red;
+}
+.cart-buy-modal-container {
+    display: flex;
+    flex: 1 0;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.cart-buy-modal-text {
+    font-weight: normal;
+}
