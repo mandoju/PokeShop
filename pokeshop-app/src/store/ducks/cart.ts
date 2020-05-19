@@ -29,3 +29,12 @@ export const addToCart = (pokemon: any) => {
     return dispatch({type: CART_DATA, payload})
   }
 }
+
+export const removeFromCart = (index: number) => {
+  return (dispatch: any, getState: () => RootStateType) => {
+    const { cart } = getState().cart;
+    const payload = [...cart];
+    payload.splice(index,1)
+    return dispatch({type: CART_DATA, payload})
+  }
+}

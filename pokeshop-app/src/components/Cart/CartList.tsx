@@ -21,8 +21,8 @@ export const CartList = () => {
             <p className="pokemon-cart-title">Carrinho</p>
           </div>
           <div className="pokemon-cart-list-container">
-            {cart.map((item) => (
-              <CartItem pokemon={item} />
+            {cart.map((item, idx) => (
+              <CartItem key={idx} pokemon={item} index={idx} />
             ))}
           </div>
           <div className="pokemon-cart-total-container">

@@ -79,6 +79,19 @@
     }
 }
 
+
+.cart-item-space-container {
+    display: flex;
+    flex: 1;
+}
+
+.cart-item-content-container {
+    display: flex;
+    flex: 2; 
+    flex-direction: column;
+    justify-content: start;
+}
+
 .cart-item-image-container {
     display: flex;
     flex: 1 0;
@@ -93,17 +106,31 @@
 .cart-item-name-container {
     display: flex;
     flex: 2 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cart-item-name {
+    margin: 0;
 }
 
 .cart-item-price-container {
     display: flex;
     flex: 1 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.cart-item-price {
+    margin: 0
+}
+
+.cart-item-remove {
+    margin: 0;
+    color: red;
+}
 .cart-buy-modal-container {
     display: flex;
     flex: 1 0;
