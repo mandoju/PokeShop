@@ -1,6 +1,6 @@
-import { NamedAPIResource } from "./NamedAPIResource";
+import { NamedAPIResource } from './NamedAPIResource';
 
 export interface PokemonAPIResource {
-    slot: number,
-    pokemon: NamedAPIResource[]
+  slot: number;
+  pokemon: NamedAPIResource[];
 }

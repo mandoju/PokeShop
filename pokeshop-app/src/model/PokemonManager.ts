@@ -7,13 +7,13 @@ import { PokemonResponse } from './API/PokemonResponse';
 export class PokemonManager {
   public type: String;
   public pokemonShop: PokemonAPIResource[] = [];
-  public pokemonInfo: PokemonResponse[] = []
+  public pokemonInfo: PokemonResponse[] = [];
 
   constructor() {
-    if(process.env.REACT_APP_POKEMON_TYPE) {
+    if (process.env.REACT_APP_POKEMON_TYPE) {
       this.type = process.env.REACT_APP_POKEMON_TYPE; //type;
     } else {
-      throw new Error('Tipo não declarado')
+      throw new Error('Tipo não declarado');
     }
   }
 
@@ -27,7 +27,7 @@ export class PokemonManager {
 
   async getPokemonInfo(url: string) {
     const pokemonInfo = await axios.get<PokemonResponse>(url);
-    this.pokemonInfo.push(pokemonInfo.data)
-    return pokemonInfo.data
+    this.pokemonInfo.push(pokemonInfo.data);
+    return pokemonInfo.data;
   }
 }

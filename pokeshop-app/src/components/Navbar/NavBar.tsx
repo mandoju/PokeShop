@@ -10,7 +10,7 @@ export const NavBar = () => {
       setInputValue(event.target.value);
       dispatch(searchPokemon(event.target.value));
     },
-    [dispatch, searchPokemon]
+    [dispatch]
   );
 
   return (
@@ -19,7 +19,7 @@ export const NavBar = () => {
         <div className="navbar-logo" />
       </div>
       <div className="navbar-input-container">
-        <i className="fa fa-search fa-lg icon" /> 
+        <i className="fa fa-search fa-lg icon" />
         <input
           className="navbar-input"
           value={inputValue}

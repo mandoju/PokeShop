@@ -4,13 +4,18 @@ import { getPriceString } from '../../../utils/getPriceString';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../../../store/ducks/cart';
 
-export const CartItem = ({ pokemon, index }: { pokemon: PokemonShopInfo, index: number; }) => {
-  
-    const dispatch = useDispatch();
-    return (
+export const CartItem = ({
+  pokemon,
+  index,
+}: {
+  pokemon: PokemonShopInfo;
+  index: number;
+}) => {
+  const dispatch = useDispatch();
+  return (
     <div className="cart-item">
       <div className="cart-item-image-container">
-        <img src={pokemon.sprites.front_default} className="cart-item-image" />
+        <img src={pokemon.sprites.front_default} className="cart-item-image" alt={pokemon.name} />
       </div>
       <div className="cart-item-name-container">
         <div className="cart-item-space-container" />
@@ -26,10 +31,10 @@ export const CartItem = ({ pokemon, index }: { pokemon: PokemonShopInfo, index: 
             {getPriceString(pokemon.price, true)}
           </p>
           <a
-            href="#"
+            href={"#remove"}
             className="cart-item-remove"
             onClick={() => {
-              dispatch(removeFromCart(index))
+              dispatch(removeFromCart(index));
             }}
           >
             Remover

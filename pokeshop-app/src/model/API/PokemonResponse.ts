@@ -8,7 +8,7 @@ export interface PokemonResponse {
   moves: PokemonMove[];
   name: string;
   order: number;
-  sprites: PokemonSprites
+  sprites: PokemonSprites;
   stats: PokemonStat[];
   types: PokemonType[];
   weight: number;
@@ -30,23 +30,23 @@ export interface PokemonMove {
 }
 
 export interface PokemonSprites {
-    back_default: string;
-    back_female: string | null;
-    back_shiny: string;
-    back_shiny_female: string | null;
-    front_default: string;
-    front_female: string | null;
-    front_shiny: string;
-    front_shiny_female: string | null;
+  back_default: string;
+  back_female: string | null;
+  back_shiny: string;
+  back_shiny_female: string | null;
+  front_default: string;
+  front_female: string | null;
+  front_shiny: string;
+  front_shiny_female: string | null;
 }
 
 export interface PokemonStat {
-    baseState: number;
-    effort: number;
-    state: NamedAPIResource;
+  baseState: number;
+  effort: number;
+  state: NamedAPIResource;
 }
 
 export interface PokemonType {
-    slow: number;
-    type: NamedAPIResource
+  slow: number;
+  type: NamedAPIResource;
 }

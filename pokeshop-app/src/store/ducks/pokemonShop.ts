@@ -14,9 +14,8 @@ const POKEMON_SHOP_LAST_SEARCH_DATA = 'pokemon_shop_last_search_data';
 
 const pokemonManager = new PokemonManager();
 
-
 interface PokemonShopState {
-  pokemonList: { pokemon: Pokemon; slot: number }[]; // Lista total dos pokémons do determinado tipo 
+  pokemonList: { pokemon: Pokemon; slot: number }[]; // Lista total dos pokémons do determinado tipo
   pokemonShow: PokemonShopInfo[]; // Lista de pokemons que irá ser mostrado na tela
   pokemonInfo: PokemonShopInfo[]; // Cache de informações que armazena os pokémons e seus determinados preços
   lastSearch: string; // Variável que guarda a ultima busca;
@@ -38,7 +37,7 @@ export default (state = INITIAL_STATE, action: AnyAction): PokemonShopState => {
     case POKEMON_SHOP_SHOW_DATA:
       return { ...state, pokemonShow: action.payload };
     case POKEMON_SHOP_LAST_SEARCH_DATA:
-      return { ...state, lastSearch: action.payload}
+      return { ...state, lastSearch: action.payload };
     default:
       return state;
   }
@@ -61,12 +60,12 @@ export const loadPokemonShow = (pokemons: Pokemon[]) => {
 
     // informações dos pokemons já armazenados
     const cachedPokemons = pokemonInfo.filter((pokemon) =>
-      pokemons.find((p) => p.name == pokemon.name)
+      pokemons.find((p) => p.name === pokemon.name)
     );
 
     // array de pokemons que irá buscar novas informações
     const newPokemons = pokemons.filter(
-      (pokemon) => !pokemonInfo.find((p) => p.name == pokemon.name)
+      (pokemon) => !pokemonInfo.find((p) => p.name === pokemon.name)
     );
 
     // fazendo requisições para buscar os novos pokemons
@@ -109,7 +108,7 @@ export const searchPokemon = (search: string) => {
     const pokemonFilteredUrls = pokemonFiltered.map(
       (pokemon) => pokemon.pokemon
     );
-    dispatch({type: POKEMON_SHOP_LAST_SEARCH_DATA, payload: search});
+    dispatch({ type: POKEMON_SHOP_LAST_SEARCH_DATA, payload: search });
     await loadPokemonShow(pokemonFilteredUrls)(dispatch, getState);
   };
 };
@@ -118,9 +117,9 @@ export const loadMorePokemon = () => {
   return async (dispatch: any, getState: () => RootStateType) => {
     const { pokemonShow, pokemonList } = getState().pokemonShop;
     const size = pokemonShow.length + 20;
-      const pokemonUrl = pokemonList
-        .slice(0, size)
-        .map((pokemon) => pokemon.pokemon);
+    const pokemonUrl = pokemonList
+      .slice(0, size)
+      .map((pokemon) => pokemon.pokemon);
     await loadPokemonShow(pokemonUrl)(dispatch, getState);
-  }
-}
+  };
+};

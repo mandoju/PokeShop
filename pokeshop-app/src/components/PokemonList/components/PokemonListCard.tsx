@@ -11,15 +11,24 @@ export const PokemonListCard = ({ pokemon }: { pokemon: any }) => {
     <div className={'pokemon-shop-list-card-container'}>
       <div className={'pokemon-shop-list-card'}>
         <div className={'pokemon-shop-list-card-info'}>
-          <img src={pokemon.sprites.front_default || NO_IMAGE_PATH } alt={pokemon.name} className={"pokemon-shop-list-card-image"} />
-          <div style={{display: 'flexbox'}}>
+          <img
+            src={pokemon.sprites.front_default || NO_IMAGE_PATH}
+            alt={pokemon.name}
+            className={'pokemon-shop-list-card-image'}
+          />
+          <div style={{ display: 'flexbox' }}>
             <p className="pokemon-shop-list-card-name">{pokemon.name}</p>
-            <p className="pokemon-shop-list-card-price">{getPriceString(pokemon.price, true)}</p>
+            <p className="pokemon-shop-list-card-price">
+              {getPriceString(pokemon.price, true)}
+            </p>
           </div>
         </div>
 
-        <div className={'pokemon-shop-list-card-button-container'} onClick={() => dispatch(addToCart(pokemon))}>
-          <p className={"pokemon-shop-list-card-button-title"}>
+        <div
+          className={'pokemon-shop-list-card-button-container'}
+          onClick={() => dispatch(addToCart(pokemon))}
+        >
+          <p className={'pokemon-shop-list-card-button-title'}>
             {CARD_ADD_BUTTON_TITLE}
           </p>
         </div>

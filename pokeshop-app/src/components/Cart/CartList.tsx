@@ -41,7 +41,7 @@ export const CartList = () => {
             </div>
             <div className="pokemon-cart-total-price-container">
               <p className="pokemon-cart-total-price-text">
-                {getPriceString(totalPrice,true)}
+                {getPriceString(totalPrice, true)}
               </p>
             </div>
           </div>

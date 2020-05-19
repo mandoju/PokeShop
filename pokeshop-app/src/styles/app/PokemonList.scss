@@ -58,29 +58,29 @@
   width: $pokemon-card-width;
   border: $default-border-style;
   border-top: 0px;
-  &:hover{
-      cursor: pointer;
+  &:hover {
+    cursor: pointer;
   }
 }
 
 .pokemon-shop-list-card-button-title {
-    font-size: larger;
-    font-weight: bold;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .pokemon-shop-list-load-more-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: $default-border-style;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 100px;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $default-border-style;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100px;
+  cursor: pointer;
 }
 
 .pokemon-shop-list-load-more-text {
-    font-size: larger;
-    font-weight: bold;
+  font-size: larger;
+  font-weight: bold;
 }

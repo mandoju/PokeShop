@@ -21,27 +21,26 @@ export default (state = INITIAL_STATE, action: AnyAction): CartDuck => {
   }
 };
 
-
 export const addToCart = (pokemon: any) => {
   return (dispatch: any, getState: () => RootStateType) => {
     const { cart } = getState().cart;
-    const payload = [...cart, pokemon]
-    return dispatch({type: CART_DATA, payload})
-  }
-}
+    const payload = [...cart, pokemon];
+    return dispatch({ type: CART_DATA, payload });
+  };
+};
 
 export const resetCart = () => {
   return (dispatch: any) => {
-    const payload: PokemonShopInfo[] = []
-    return dispatch({type: CART_DATA, payload})
-  }
-}
+    const payload: PokemonShopInfo[] = [];
+    return dispatch({ type: CART_DATA, payload });
+  };
+};
 
 export const removeFromCart = (index: number) => {
   return (dispatch: any, getState: () => RootStateType) => {
     const { cart } = getState().cart;
     const payload = [...cart];
-    payload.splice(index,1)
-    return dispatch({type: CART_DATA, payload})
-  }
-}
+    payload.splice(index, 1);
+    return dispatch({ type: CART_DATA, payload });
+  };
+};
