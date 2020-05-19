@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './PokemonListCard.module.scss';
 import { CARD_BUY_BUTTON_TITLE } from '../../../constants/dictionary';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../store/ducks/cart';
@@ -8,18 +7,20 @@ import { getPriceString } from '../../../utils/getPriceString';
 export const PokemonListCard = ({ pokemon }: { pokemon: any }) => {
   const dispatch = useDispatch();
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <div className={styles.pokemonInfo}>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-          <p>{pokemon.name}</p>
-          <p>{getPriceString(pokemon.price, true)}</p>
+    <div className={'pokemon-shop-list-card-container'}>
+      <div className={'pokemon-shop-list-card'}>
+        <div className={'pokemon-shop-list-card-info'}>
+          <img src={pokemon.sprites.front_default} alt={pokemon.name} className={"pokemon-shop-list-card-image"} />
+          <div style={{display: 'flexbox'}}>
+            <p className="pokemon-shop-list-card-name">{pokemon.name}</p>
+            <p className="pokemon-shop-list-card-price">{getPriceString(pokemon.price, true)}</p>
+          </div>
         </div>
 
-        <div className={styles['button-container']}>
-          <button onClick={() => dispatch(addToCart(pokemon))}>
+        <div className={'pokemon-shop-list-card-button-container'} onClick={() => dispatch(addToCart(pokemon))}>
+          <p className={"pokemon-shop-list-card-button-title"}>
             {CARD_BUY_BUTTON_TITLE}
-          </button>
+          </p>
         </div>
       </div>
     </div>

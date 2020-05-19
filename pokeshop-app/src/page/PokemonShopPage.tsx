@@ -17,7 +17,7 @@ export const PokemonPage = () => {
 
   useEffect(() => {
     if (pokemonList.length > 0) {
-      const size = 20;
+      const size = 40;
       const pokemonUrl = pokemonList
         .slice(0, size)
         .map((pokemon) => pokemon.pokemon);
