@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootStateType } from '../../store/ducks';
 import { CartItem } from './components/CartItem';
 import { ModalMessage } from '../Modal/ModalMessage';
 import { CardListBuyModal } from './components/CartListBuyModal';
 import { getPriceString } from '../../utils/getPriceString';
+import { resetCart } from '../../store/ducks/cart';
 
 export const CartList = () => {
   const cart = useSelector((state: RootStateType) => state.cart.cart);
+  const dispatch = useDispatch();
 
   const [modalState, setModalState] = useState(false);
 
@@ -45,7 +47,7 @@ export const CartList = () => {
       </div>
       <ModalMessage
         showModal={modalState}
-        closeFunction={() => setModalState(false)}
+        closeFunction={() => {dispatch(resetCart());setModalState(false);}}
       >
         <CardListBuyModal total={cart.length} price={totalPrice} />
       </ModalMessage>

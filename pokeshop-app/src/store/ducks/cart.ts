@@ -30,6 +30,13 @@ export const addToCart = (pokemon: any) => {
   }
 }
 
+export const resetCart = () => {
+  return (dispatch: any) => {
+    const payload: PokemonShopInfo[] = []
+    return dispatch({type: CART_DATA, payload})
+  }
+}
+
 export const removeFromCart = (index: number) => {
   return (dispatch: any, getState: () => RootStateType) => {
     const { cart } = getState().cart;
