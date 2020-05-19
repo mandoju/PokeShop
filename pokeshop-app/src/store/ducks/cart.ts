@@ -5,13 +5,16 @@ import { PokemonShopInfo } from '../../model/PokemonShopInfo';
 const CART_DATA = 'cart_data';
 
 export interface CartDuck {
-  cart: PokemonShopInfo[];
+  cart: PokemonShopInfo[]; // Lista de pokémon dentro do carrinho
 }
 
 const CART_INITIAL_STATE: CartDuck = {
   cart: [],
 };
 
+/**
+ * Reducer que representa o carrinho
+ */
 export default (state = CART_INITIAL_STATE, action: AnyAction): CartDuck => {
   switch (action.type) {
     case CART_DATA:
@@ -21,7 +24,11 @@ export default (state = CART_INITIAL_STATE, action: AnyAction): CartDuck => {
   }
 };
 
-export const addToCart = (pokemon: any) => {
+/**
+ * Action creator que adiciona um pokemon ao carrinho
+ * @param pokemon Pokémon que irá ser adicioando ao carrinho
+ */
+export const addToCart = (pokemon: PokemonShopInfo) => {
   return (dispatch: any, getState: () => RootStateType) => {
     const { cart } = getState().cart;
     const payload = [...cart, pokemon];
@@ -29,6 +36,9 @@ export const addToCart = (pokemon: any) => {
   };
 };
 
+/**
+ * Action creator  que reseta o carrinho (utilizado pós compra)
+ */
 export const resetCart = () => {
   return (dispatch: any) => {
     const payload: PokemonShopInfo[] = [];
@@ -36,6 +46,10 @@ export const resetCart = () => {
   };
 };
 
+/**
+ * Action creator que remove um pokémon do carrinho
+ * @param index índice que irá ser removido
+ */
 export const removeFromCart = (index: number) => {
   return (dispatch: any, getState: () => RootStateType) => {
     const { cart } = getState().cart;

@@ -1,6 +1,9 @@
 import { NamedAPIResource } from './NamedAPIResource';
 import { PokemonAPIResource } from './PokemonAPIResource';
 
+/**
+ * Tipo de resposta da api ao realizar um request na rota /type
+ */
 export interface PokemonTypeResponse {
   id: number;
   name: string;

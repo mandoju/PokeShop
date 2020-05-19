@@ -40,6 +40,6 @@ export const saveCartState = (cardInfo: PokemonShopInfo[]) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('cartState', serializedState);
   } catch {
-    // ignore write errors
+    // ignorar errors de escrita
   }
 };

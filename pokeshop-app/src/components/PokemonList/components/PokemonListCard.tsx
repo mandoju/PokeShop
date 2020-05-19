@@ -4,8 +4,13 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../store/ducks/cart';
 import { getPriceString } from '../../../utils/getPriceString';
 import { NO_IMAGE_PATH } from '../../../constants/image';
+import { PokemonShopInfo } from '../../../model/PokemonShopInfo';
 
-export const PokemonListCard = ({ pokemon }: { pokemon: any }) => {
+/**
+ * Componente que renderiza o cartão de um pokemon
+ * @param pokemon pokemon que irá ser representado no cartão
+ */
+export const PokemonListCard = ({ pokemon }: { pokemon: PokemonShopInfo }) => {
   const dispatch = useDispatch();
   return (
     <div className={'pokemon-shop-list-card-container'}>

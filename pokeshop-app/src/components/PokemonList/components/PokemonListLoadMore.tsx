@@ -5,7 +5,6 @@ import { RootStateType } from '../../../store/ducks';
 import { loadMorePokemon } from '../../../store/ducks/pokemonShop';
 
 /**
- *
  *  Componente que representa o botão de carregar mais pokémon no final da lista
  */
 export const PokemonListLoadMore = () => {

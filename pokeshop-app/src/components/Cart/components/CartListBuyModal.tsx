@@ -1,6 +1,11 @@
 import React from 'react';
 import { getPriceString } from '../../../utils/getPriceString';
 
+/**
+ * Modal que aparece ao finalizar a compra
+ * @param price preço final da compra
+ * @param total total de pokémon comprados
+ */
 export const CardListBuyModal = ({
   price,
   total,

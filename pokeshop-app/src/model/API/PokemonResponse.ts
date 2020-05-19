@@ -1,5 +1,8 @@
 import { NamedAPIResource } from './NamedAPIResource';
 
+/**
+ * Tipo de resposta da api ao realizar um request na rota /pokemon
+ */
 export interface PokemonResponse {
   abilities: PokemonAbility[];
   base_experience: number;

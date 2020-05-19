@@ -4,6 +4,11 @@ import { getPriceString } from '../../../utils/getPriceString';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../../../store/ducks/cart';
 
+/**
+ * Componente que renderiza um pokemon no carrinho. 
+ * @param pokemon pokemon que será renderizado
+ * @param index index que este pokemon está na lista (utilizado para removê-lo do carrinho)
+ */
 export const CartItem = ({
   pokemon,
   index,

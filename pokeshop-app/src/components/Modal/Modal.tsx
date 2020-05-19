@@ -6,6 +6,9 @@ export type ModalProps = {
 };
 export type ModalState = any;
 
+/**
+ * Componente do Modal
+ */
 export class Modal extends React.Component<ModalProps, ModalState> {
   private container: HTMLDivElement;
   private modalRoot: HTMLElement;

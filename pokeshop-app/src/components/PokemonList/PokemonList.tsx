@@ -3,6 +3,9 @@ import { useSelectPokemonShow } from '../../hooks/useSelectPokemonShow';
 import { PokemonListCard } from './components/PokemonListCard';
 import { PokemonListLoadMore } from './components/PokemonListLoadMore';
 
+/**
+ * Componente qure representa a vitrine da loja de pokemons
+ */
 export const PokemonList = () => {
   const pokemonShow = useSelectPokemonShow();
 

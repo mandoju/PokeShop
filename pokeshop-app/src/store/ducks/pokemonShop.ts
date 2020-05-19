@@ -12,7 +12,7 @@ const POKEMON_SHOP_INFO_DATA = 'pokemon_shop_info_data';
 const POKEMON_SHOP_SHOW_DATA = 'pokemon_shop_show_data';
 const POKEMON_SHOP_LAST_SEARCH_DATA = 'pokemon_shop_last_search_data';
 
-const pokemonManager = new PokemonManager();
+const pokemonManager = new PokemonManager(); // Manager que irá manipular os requests
 
 export interface PokemonShopDuck {
   pokemonList: { pokemon: Pokemon; slot: number }[]; // Lista total dos pokémons do determinado tipo
@@ -28,6 +28,9 @@ export const POKEMON_SHOP_INITIAL_STATE: PokemonShopDuck = {
   lastSearch: '',
 };
 
+/**
+ * Reducer que representa a vitrine de pokemon
+ */
 export default (
   state = POKEMON_SHOP_INITIAL_STATE,
   action: AnyAction
@@ -46,6 +49,9 @@ export default (
   }
 };
 
+/**
+ * Action creator que carrega a lista de pokemons de um determinado tipo
+ */
 export const loadPokemonList = () => {
   return async (dispatch: any) => {
     const pokemonList = await pokemonManager.getPokemons();
@@ -54,7 +60,7 @@ export const loadPokemonList = () => {
 };
 
 /**
- *  Este Action creator é utilizado para buscar as informações dos pokemons que irá ser mostrado.
+ * Action creator que é utilizado para buscar as informações dos pokemons que irá ser mostrado.
  * @param pokemons array de pokemons que irá ser buscado
  */
 export const loadPokemonShow = (pokemons: Pokemon[]) => {
@@ -99,7 +105,7 @@ export const loadPokemonShow = (pokemons: Pokemon[]) => {
 };
 
 /**
- *  Esta função procura os pokémon de acordo com a string de entrada e mostra os pokemons em seguida
+ *  Action creator que procura os pokémon de acordo com a string de entrada e mostra os pokemons em seguida
  * @param search string que irá ser buscada
  */
 export const searchPokemon = (search: string) => {
@@ -116,6 +122,9 @@ export const searchPokemon = (search: string) => {
   };
 };
 
+/**
+ * Action creator que carrega mais pokemóns a vitrine
+ */
 export const loadMorePokemon = () => {
   return async (dispatch: any, getState: () => RootStateType) => {
     const { pokemonShow, pokemonList } = getState().pokemonShop;

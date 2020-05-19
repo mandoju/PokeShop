@@ -1,6 +1,9 @@
 import React from 'react';
 import { Modal } from './Modal';
 
+/**
+ * Componente que renderiza um mondal demonstrando uma mensagem
+ */
 export const ModalMessage = ({
   showModal,
   children,

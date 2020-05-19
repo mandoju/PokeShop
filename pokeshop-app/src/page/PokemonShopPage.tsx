@@ -6,15 +6,24 @@ import { useSelectPokemonList } from '../hooks/useSelectPokemonList';
 import { PokemonList } from '../components/PokemonList/PokemonList';
 import { CartList } from '../components/Cart/CartList';
 
+/**
+ * Página do shop do pokemon. Esta página mostra a vitrine, carrinho de compras e busca
+ */
 export const PokemonPage = () => {
+  
+  
+  const dispatch = useDispatch();
+  
+  // recebendo valor da lista de pokemons do determinado tipo
   const pokemonList = useSelectPokemonList();
 
-  const dispatch = useDispatch();
 
+  // Quando carregar a página, pegar a lista de pokemons de um determinado tipo
   useEffect(() => {
     dispatch(loadPokemonList());
   }, [dispatch]);
 
+  // Carregando a informação dos 40 pokemons iniciais (para evitar a página carregar todos de uma vez só)
   useEffect(() => {
     if (pokemonList.length > 0) {
       const size = 40;

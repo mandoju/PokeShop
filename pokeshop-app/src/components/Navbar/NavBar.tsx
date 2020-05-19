@@ -2,6 +2,9 @@ import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchPokemon } from '../../store/ducks/pokemonShop';
 
+/**
+ * Componente que renderiza a navbar
+ */
 export const NavBar = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');

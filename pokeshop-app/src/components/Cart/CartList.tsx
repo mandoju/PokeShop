@@ -12,12 +12,19 @@ import {
   CART_BUY_BUTTON_TITLE,
 } from '../../constants/dictionary';
 
+/**
+ * Componente que irá renderizar o carrinho
+ */
 export const CartList = () => {
+  
+  // Buscando informações do carrinho
   const cart = useSelector((state: RootStateType) => state.cart.cart);
   const dispatch = useDispatch();
 
+  // Estado que representa se o modal está aberto ou não
   const [modalState, setModalState] = useState(false);
 
+  // Preço total do carrinho
   const totalPrice =
     cart.reduce((a, b) => a + Math.floor(b.price * 100), 0) / 100;
 
