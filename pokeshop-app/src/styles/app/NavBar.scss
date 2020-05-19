@@ -1,0 +1,40 @@
+@import './Variables.scss';
+
+.navbar-container {
+  display: flex;
+  flex: 1 0;
+  width: 100%;
+  min-height: $navbar-size;
+}
+
+.navbar-input {
+  display: flex;
+  flex: 1 0;
+  height: 35px;
+  padding-left: 40px;
+  font-size: medium;
+}
+
+.navbar-input-container {
+  display: flex;
+  flex: 3 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-input-container i {
+  position: absolute;
+  padding-left: 10px;
+}
+
+.navbar-logo-container {
+  display: flex;
+  flex: 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-right-element-container {
+  display: flex;
+  flex: 1 0;
+}

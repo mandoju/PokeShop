@@ -1,0 +1,86 @@
+@import './Variables.scss';
+
+.pokemon-shop-list-inner-container {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon-shop-list-card-container {
+  flex-grow: 1;
+  flex-direction: column;
+  width: $pokemon-card-width;
+  height: 280px;
+  padding-bottom: 30px;
+}
+
+.pokemon-shop-list-card {
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+.pokemon-shop-list-card-image {
+  border: $default-border-style;
+  max-width: 96px;
+  max-height: 96px;
+}
+
+.pokemon-shop-list-card-name {
+  font-size: large;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokemon-shop-list-card-price {
+  font-weight: bold;
+  text-align: center;
+}
+
+.pokemon-shop-list-card-info {
+  display: flex;
+  border: $default-border-style;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: $pokemon-card-width;
+  height: 80%;
+}
+
+.pokemon-shop-list-card-button-container {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  justify-content: center;
+  width: $pokemon-card-width;
+  border: $default-border-style;
+  border-top: 0px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pokemon-shop-list-card-button-title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.pokemon-shop-list-load-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $default-border-style;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.pokemon-shop-list-load-more-text {
+  font-size: larger;
+  font-weight: bold;
+}
